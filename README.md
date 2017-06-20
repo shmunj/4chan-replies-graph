@@ -15,7 +15,7 @@ Use it in the browser:
 https://<4chan-replies-graph server address>/<board>/thread/<thread id>
 ```
 
-You can check it out [HERE]()
+You can check it out [HERE](https://hidden-earth-51682.herokuapp.com)
 
 I made this just so I could do live demos of different thread structures. All the heavy work is done on the client side, in the browser, so be patient.
 
