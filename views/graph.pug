@@ -1,0 +1,41 @@
+doctype html
+html(lang="en")
+
+    head
+        meta(charset="UTF-8")
+        meta(description="Graph replies in 4chan threads.")
+        title 4chan Replies Graph
+
+        script(src="https://code.jquery.com/jquery-3.2.1.slim.js"
+            integrity="sha256-tA8y0XqiwnpwmOIl3SGAcFl2RvxHjA8qp0+1uCGmRmg="
+            crossorigin="anonymous")
+
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+            integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+            crossorigin="anonymous")
+
+        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous")
+
+        script(src="https://d3js.org/d3.v3.min.js" language="javascript")
+        
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.20.0/vis.min.js" language="javascript")
+
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.20.0/vis.min.css")
+        
+        link(rel="stylesheet" href="/css/style.css")
+
+        script(src="/js/showgraph.js" language="javascript")
+
+    body
+        - if (error) {
+            div(id="info" class="container centered")
+                h4= error
+        - }
+
+        - if (data) {
+            script var posts = !{JSON.stringify(data.posts)}
+        -}
+
+        div(id="mynetwork" class="row")
